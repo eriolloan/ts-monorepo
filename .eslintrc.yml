@@ -63,6 +63,9 @@ rules:
         - { blankLine: any, prev: [const, let, var], next: [const, let, var] }
         # require blank lines before return statements
         - { blankLine: always, prev: '*', next: return }
+        # require blank lines after import statements
+        - { blankLine: always, prev: 'import', next: '*' }
+        - { blankLine: any, prev: 'import', next: 'import' }
 
     # Fixing conflict between prettier and eslint with this rule
     object-curly-newline: 'off'
