@@ -6,20 +6,20 @@ This repository explains how to create monorepos project using npm and TypeScrip
 
 ## ToC
 
-- [ToC](#toc)
-- [Tools](#tools)
-- [Directory Structure](#directory-structure)
-- [Workspaces](#workspaces)
-- [Dependencies across packages](#dependencies-across-packages)
-- [Resolve dependencies as TypeScript projects](#resolve-dependencies-as-typescript-projects)
-- [Do we still need Lerna ?](#do-we-still-need-lerna-)
-  - [Updated](#updated)
-- [License](#license)
+-   [ToC](#toc)
+-   [Tools](#tools)
+-   [Directory Structure](#directory-structure)
+-   [Workspaces](#workspaces)
+-   [Dependencies across packages](#dependencies-across-packages)
+-   [Resolve dependencies as TypeScript projects](#resolve-dependencies-as-typescript-projects)
+-   [Do we still need Lerna ?](#do-we-still-need-lerna-)
+    -   [Updated](#updated)
+-   [License](#license)
 
 ## Tools
 
-- npm cli(v7 or later)
-- TypeScript
+-   npm cli(v7 or later)
+-   TypeScript
 
 ## Directory Structure
 
@@ -87,12 +87,12 @@ For example, `packages/x-cli/src/main.spec.ts` is a test code for `main.ts`, whi
 ```ts
 /* packages/x-cli/src/main.ts.*/
 
-import { awesomeFn } from "@quramy/x-core";
+import { awesomeFn } from '@quramy/x-core'
 
 export async function main() {
-  // dependencies across child packages
-  const out = await awesomeFn();
-  return out;
+    // dependencies across child packages
+    const out = await awesomeFn()
+    return out
 }
 ```
 

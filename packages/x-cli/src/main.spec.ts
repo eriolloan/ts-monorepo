@@ -1,10 +1,11 @@
-import assert from "assert";
-import { main } from "./main";
+import assert from 'assert'
+import { main } from './main'
 
 async function test() {
-  const actual = await main();
-  assert(actual != null);
-  console.log("ok");
+    const actual = await main()
+
+    assert(actual != null)
+    console.log('ok')
 }
 
-test();
+test()

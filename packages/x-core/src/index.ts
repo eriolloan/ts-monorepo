@@ -1,3 +1,3 @@
 export function awesomeFn() {
-  return "Hello";
+    return 'Hello'
 }
