@@ -1,5 +1,5 @@
 {
-    "name": "npm-ts-workspaces-example",
+    "name": "npm-ts-workspaces",
     "private": true,
     "scripts": {
         "clean": "rimraf \"packages/**/lib\" \"packages/**/*.tsbuildinfo\"",
@@ -26,6 +26,7 @@
         "typescript": "4.9.5"
     },
     "workspaces": [
-        "packages/*"
+        "packages/*",
+        "apps/*"
     ]
 }
