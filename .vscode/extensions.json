@@ -1,0 +1,13 @@
+{
+    "recommendations": [
+        // sorted by extension name
+        "aaron-bond.better-comments",
+        "EditorConfig.EditorConfig",
+        "mike-co.import-sorter",
+        "zengxingxin.sort-js-object-keys",
+        "dbaeumer.vscode-eslint",
+        "DavidAnson.vscode-markdownlint",
+        "rvest.vs-code-prettier-eslint",
+        "redhat.vscode-yaml"
+    ]
+}

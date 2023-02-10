@@ -1,0 +1,15 @@
+{
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint",
+    "editor.formatOnPaste": false,
+    "editor.formatOnSave": true,
+    "editor.formatOnSaveMode": "file",
+    "editor.formatOnType": false,
+    "eslint.workingDirectories": [{ "mode": "auto" }],
+    "files.autoSave": "onFocusChange",
+    "files.eol": "\n",
+    "prettier.requireConfig": true,
+    "typescript.tsdk": "node_modules/typescript/lib"
+}
