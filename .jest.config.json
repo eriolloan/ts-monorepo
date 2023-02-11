@@ -16,6 +16,7 @@
         "^(\\.{1,2}/.*)\\.js$": "$1"
     },
     "transformIgnorePatterns": [
-        "/node_modules/"
+        "/node_modules/",
+        "^.+\\.js$"
     ]
 }
