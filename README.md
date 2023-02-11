@@ -12,7 +12,7 @@ This repository explains how to create monorepos project using npm and TypeScrip
 -   [Workspaces](#workspaces)
 -   [Dependencies across packages](#dependencies-across-packages)
 -   [Resolve dependencies as TypeScript projects](#resolve-dependencies-as-typescript-projects)
--   [Do we still need Lerna ?](#do-we-still-need-lerna-)
+-   [Testing](#testing)
     -   [Updated](#updated)
 -   [License](#license)
 
@@ -23,10 +23,24 @@ This repository explains how to create monorepos project using npm and TypeScrip
 
 ## Directory Structure
 
-Put each package under the `packages` directory.
+Put each library under the `packages` directory.
+Put each application under the `apps` directory.
+
+Code you would import for reuse in other code would go to `packages/` while code you would run on a server (an API or a SPA for example) would go to `apps/`.
 
 ```
 .
+├── apps
+│   ├── api
+│   │   ├── dist
+│   │   │   ├── main.d.ts
+│   │   │   ├── main.js
+│   │   │   └── main.js.map
+│   │   ├── package.json
+│   │   ├── src
+│   │   │   ├── main.test.ts
+│   │   │   └── main.ts
+│   │   └── tsconfig.json
 ├── node_modules/
 ├── README.md
 ├── package-lock.json
@@ -43,6 +57,7 @@ Put each package under the `packages` directory.
 │   │   ├── package.json
 │   │   ├── src
 │   │   │   ├── cli.ts
+│   │   │   ├── main.test.ts
 │   │   │   └── main.ts
 │   │   └── tsconfig.json
 │   └── x-core
@@ -52,6 +67,7 @@ Put each package under the `packages` directory.
 │       │   └── index.js.map
 │       ├── package.json
 │       ├── src
+│       │   └── index.test.ts
 │       │   └── index.ts
 │       └── tsconfig.json
 ├── tsconfig.build.json
@@ -122,7 +138,7 @@ First, you add `composite: true` to project-root tsconfig.json to use project re
 Second, configure each package's tsconfig and configure dependencies across packages.
 
 ```js
-/* packages/x-cli/tsconfig.json */
+/* packages|apps/<project>/tsconfig.json */
 
 {
   "extends": "../../tsconfig.json",
@@ -147,24 +163,20 @@ And create a project which depends on all packages:
 
 Let's exec `npx tsc --build tsconfig.build.json`. The .ts files included in all packages are build at once!
 
-## Do we still need Lerna ?
+### Testing
 
-Partially, yes.
+Jest is used for testing TS code. It is configured globally in `/.jest.json`.
 
-TypeScript project references and npm workspaces features resolves dependencies across each package in both runtime and compile. So we no longer need `lerna bootstrap` .
+To add testing to a project, add a `test` script to its `package.json` :
 
-But npm cli don't have functions provided by lerna's sub command, such as `lerna version` or `lerna run`. If you want them, you can use lerna or consider introducing another CLI.
+```js
+/* packages|apps/<project>/package.json */
 
-### Updated
-
-Since npm CLI 7.7.0, we can use [`--workspaces` option](https://docs.npmjs.com/cli/v7/using-npm/workspaces#running-commands-in-the-context-of-workspaces).
-
-```sh
-# Excecute npm test in all workspaces
-$ npm test --workspaces
+    "scripts": {
+        ...
+        "test": "jest -c ../../.jest.json"
+    }
 ```
-
-This option works as well as `lerna run test` .
 
 ## License
 
