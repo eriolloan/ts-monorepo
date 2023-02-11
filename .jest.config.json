@@ -8,6 +8,9 @@
     "extensionsToTreatAsEsm": [
         ".ts"
     ],
+    "testMatch": [
+        "<rootDir>/src/**/*.test.ts"
+    ],
     "transform": {},
     "moduleNameMapper": {
         "^(\\.{1,2}/.*)\\.js$": "$1"

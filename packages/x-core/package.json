@@ -6,7 +6,7 @@
     "scripts": {
         "clean": "rimraf lib *.tsbuildinfo",
         "compile": "npm run clean && tsc",
-        "test": "jest -c ../../.jest.json"
+        "test": "jest"
     },
     "types": "lib/index.d.ts",
     "keywords": [],
