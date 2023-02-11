@@ -7,7 +7,7 @@
     "editor.formatOnSave": true,
     "editor.formatOnSaveMode": "file",
     "editor.formatOnType": false,
-    "eslint.workingDirectories": [{ "mode": "auto" }],
+    "eslint.workingDirectories": ["packages/*", "apps/*"],
     "files.autoSave": "onFocusChange",
     "files.eol": "\n",
     "prettier.requireConfig": true,
