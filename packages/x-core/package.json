@@ -1,5 +1,5 @@
 {
-    "name": "@quramy/x-core",
+    "name": "@libs/x-core",
     "version": "1.0.0",
     "description": "Awesome functions",
     "main": "lib/index.js",

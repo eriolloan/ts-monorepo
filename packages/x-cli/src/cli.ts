@@ -1,4 +1,4 @@
-import { main } from './main'
+import { main } from '@libs/x-cli/src/main'
 
 main()
     .then(out => {

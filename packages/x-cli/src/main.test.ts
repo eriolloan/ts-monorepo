@@ -1,4 +1,4 @@
-import { main } from './main.js'
+import { main } from '@libs/x-cli'
 
 describe('main', () => {
     it('should exist', async () => {

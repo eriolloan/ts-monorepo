@@ -1,5 +1,5 @@
 {
-    "name": "npm-ts-workspaces",
+    "name": "monorepo-name",
     "private": true,
     "scripts": {
         "clean": "npm run clean --workspaces",

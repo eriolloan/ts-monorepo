@@ -103,7 +103,7 @@ For example, `packages/x-cli/src/main.spec.ts` is a test code for `main.ts`, whi
 ```ts
 /* packages/x-cli/src/main.ts.*/
 
-import { awesomeFn } from '@quramy/x-core'
+import { awesomeFn } from '@libs/x-core'
 
 export async function main() {
     // dependencies across child packages
