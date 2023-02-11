@@ -4,5 +4,7 @@
         "rootDir": "src",
         "outDir": "lib"
     },
+    "include": ["src/**/*.ts"],
+    "exclude": ["**/*.test.ts", "**/*.mock.ts"],
     "references": [{ "path": "../x-core" }]
 }

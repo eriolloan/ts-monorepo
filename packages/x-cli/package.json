@@ -7,8 +7,9 @@
         "x-cli": "bin/cli.js"
     },
     "scripts": {
-        "compile": "tsc",
-        "test": "node lib/main.spec.js"
+        "clean": "rimraf lib *.tsbuildinfo",
+        "compile": "npm run clean && tsc",
+        "test": "jest -c ../../.jest.json"
     },
     "keywords": [],
     "author": "quramy",

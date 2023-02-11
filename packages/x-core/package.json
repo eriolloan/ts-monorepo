@@ -4,8 +4,9 @@
     "description": "Awesome functions",
     "main": "lib/index.js",
     "scripts": {
-        "compile": "tsc",
-        "test": "echo \"T.B.D.\""
+        "clean": "rimraf lib *.tsbuildinfo",
+        "compile": "npm run clean && tsc",
+        "test": "jest -c ../../.jest.json"
     },
     "types": "lib/index.d.ts",
     "keywords": [],
